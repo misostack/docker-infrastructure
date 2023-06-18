@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  redis:
+    image: redis:7.0.11-alpine3.18
+    container_name: jsbase_redis
+    restart: no
+    command: redis-server --appendonly yes
+    ports:
+      - target: 6379
+        published: 6379
+        protocol: tcp
+        mode: host
+    volumes:
+      - redis_data:/data
+    networks:
+      - jsbase-infra
+networks:
+  jsbase-infra:
+volumes:
+  redis_data: {}
