@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+  mysql:
+    image: mysql:8.0.33-oracle
+    container_name: jsbase_mysql
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: jsbase-infra
+    ports:
+      - 3306:3306
+    networks:
+      - jsbase-infra
+networks:
+  jsbase-infra:
+volumes:
+  db_data: {}
