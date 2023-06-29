@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  # mongodb
+  db:
+    image: mongo:5.0.9
+    container_name: jsbase_mongodb
+    restart: no
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+    env_file:
+      - ./.env.docker
+    networks:
+      - jsbase-infra
+
+networks:
+  jsbase-infra:
+volumes:
+  mongo_data: {}
