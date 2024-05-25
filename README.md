@@ -23,3 +23,7 @@ There are following restart policies for Docker containers:
 - always: Always restart a stopped container unless the container was stopped explicitly
 - unless-stopped: Restart the container unless the container was in stopped state before the Docker daemon was stopped (explained later)
 - on-failure: Restart the container if it exited with a non-zero exit code or if the docker daemon restarts
+
+## Version
+
+- https://docs.docker.com/compose/compose-file/compose-versioning/

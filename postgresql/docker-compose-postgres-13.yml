@@ -2,14 +2,14 @@ version: "3.8"
 
 services:
   postgres:
-    container_name: postgres_container
-    image: postgres
+    container_name: postgres_container13
+    image: postgres:13.14
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123456}
       PGDATA: /data/postgres
     volumes:
-      - postgres:/data/postgres
+      - postgres13:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -21,4 +21,4 @@ networks:
     driver: bridge
 
 volumes:
-  postgres:
+  postgres13:
